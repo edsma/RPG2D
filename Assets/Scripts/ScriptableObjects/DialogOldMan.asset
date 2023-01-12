@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c2391470509ecd45b3fa173607a21c7, type: 3}
+  m_Name: DialogOldMan
+  m_EditorClassIdentifier: 
+  Name: Maestro
+  Icon: {fileID: 21300000, guid: 2b517ee58893ae04fb0ff52a9b4cc643, type: 3}
+  hasExtraInteraction: 0
+  interactionExtra: 0
+  greetings: Cordial saludo
+  Conversation:
+  - text: Conozco historias de valientes que se han adentrado al bosque prohibido
+      en buscqueda de nuevas aventuras, pero primero debes pasar por el pueblo.
+  - text: "Mis d\xEDas de aventurero estan llegando a su fin"
+  - text: Dicen que en midgar no crecen ni las flores ni las plantas, pero por algun
+      motivo las flores si
+  Goodbye: "Que la fuerza te acompa\xF1e"

@@ -1,0 +1,13 @@
+
+.vs
+UserSettings/
+Temp/
+Library/ShaderCache/shader/
+Library/ShaderCache/
+Library/StateCache/
+Assets/TextMesh Pro/
+Library/APIUpdater/
+Library/Artifacts/
+Library/Bee/
+Library/BurstCache/
+Library/PackageCache/
