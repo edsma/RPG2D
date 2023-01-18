@@ -16,7 +16,7 @@ MonoBehaviour:
   Icon: {fileID: 21300000, guid: 69f7e6388bd25fb40bf2b55334c6e317, type: 3}
   hasExtraInteraction: 1
   interactionExtra: 0
-  greetings: Pst pst mira hacia otro lado
+  greetings: Debemos detener esta amenaza
   Conversation:
   - text: Hola aventurero, he visto tu fuerza.
   - text: Creo que nos podemos ayudar mutuamente

@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63817ffec6516544fa2db6c6071c8c68, type: 3}
+  m_Name: QuestKill50Enemies
+  m_EditorClassIdentifier: 
+  Name: Hijo e su puta madre
+  Id: Kill50
+  quantityTarget: 50
+  Description: Asesina 50 enemigos para demostrar tu valor
+  rewardGold: 100
+  rewardExp: 50
+  questRewardItem:
+    item: {fileID: 11400000, guid: 39367d39787c7484abd4cea98cd6773b, type: 2}
+    quantity: 2
+  questCompletedCheck: 1
+  actualQquantity: 50

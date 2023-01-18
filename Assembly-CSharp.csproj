@@ -59,12 +59,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\Dialogs\NpcDialog.cs" />
+    <Compile Include="Assets\Scripts\Quests\Quest.cs" />
     <Compile Include="Assets\Scripts\Inventory\ItemPotionLife.cs" />
     <Compile Include="Assets\Scripts\Inventory\InventorySlot.cs" />
     <Compile Include="Assets\Scripts\Characters\CharacterStats.cs" />
     <Compile Include="Assets\Scripts\Dialogs\NPCInteraction.cs" />
     <Compile Include="Assets\Scripts\Extras\ZonaConfiner.cs" />
     <Compile Include="Assets\Scripts\Characters\CharacterAnimation.cs" />
+    <Compile Include="Assets\Scripts\Quests\CharacterQuestDescription.cs" />
     <Compile Include="Assets\Scripts\Extras\AtributteButton.cs" />
     <Compile Include="Assets\Scripts\Dialogs\DialogManager.cs" />
     <Compile Include="Assets\Scripts\Extras\Singleton.cs" />
@@ -74,16 +76,20 @@
     <Compile Include="Assets\Scripts\Characters\ManaCharacter.cs" />
     <Compile Include="Assets\Scripts\Waypoint\Waypoint.cs" />
     <Compile Include="Assets\Scripts\Characters\CharacterHealth.cs" />
+    <Compile Include="Assets\Scripts\Quests\QuestDescription.cs" />
     <Compile Include="Assets\Scripts\Inventory\InventoryUI.cs" />
     <Compile Include="Assets\Scripts\Characters\BaseHealth.cs" />
     <Compile Include="Assets\Scripts\Common\Constants.cs" />
     <Compile Include="Assets\Scripts\Inventory\InventoryItem.cs" />
     <Compile Include="Assets\Scripts\Characters\CharacterExp.cs" />
     <Compile Include="Assets\Scripts\Characters\Character.cs" />
+    <Compile Include="Assets\Scripts\Quests\QuestRewardItem.cs" />
     <Compile Include="Assets\Scripts\Managers\UIManager.cs" />
     <Compile Include="Assets\Scripts\Managers\LevelManager.cs" />
     <Compile Include="Assets\Scripts\Characters\MovementCharacter.cs" />
+    <Compile Include="Assets\Scripts\Quests\QuestManager.cs" />
     <Compile Include="Assets\Scripts\Waypoint\WaypointMovement.cs" />
+    <Compile Include="Assets\Scripts\Quests\InspectorQuestDescription.cs" />
     <Compile Include="Assets\Scripts\Inventory\AddItems.cs" />
     <Compile Include="Assets\Scripts\Inventory\ItemPotionMana.cs" />
   </ItemGroup>

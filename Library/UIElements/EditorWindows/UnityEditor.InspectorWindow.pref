@@ -113,7 +113,15 @@ MonoBehaviour:
   - __PanelContainer__rootVisualContainer__inspector-window-main-scroll-view__Conversation__Conversation__UnityEngine.UIElements.Foldout
   - __PanelContainer__rootVisualContainer__inspector-window-main-scroll-view__Conversation__Conversation__list-view__scroll-view__VerticalScroller__Slider__UnityEngine.UIElements.Scroller+ScrollerSlider
   - __PanelContainer__rootVisualContainer__inspector-window-main-scroll-view__Conversation__Conversation__list-view__scroll-view__HorizontalScroller__Slider__UnityEngine.UIElements.Scroller+ScrollerSlider
+  - __PanelContainer__rootVisualContainer__inspector-window-main-scroll-view__availableQuests__UnityEngine.UIElements.ListView
+  - __PanelContainer__rootVisualContainer__inspector-window-main-scroll-view__availableQuests__availableQuests__UnityEngine.UIElements.Foldout
+  - __PanelContainer__rootVisualContainer__inspector-window-main-scroll-view__availableQuests__availableQuests__list-view__scroll-view__VerticalScroller__Slider__UnityEngine.UIElements.Scroller+ScrollerSlider
+  - __PanelContainer__rootVisualContainer__inspector-window-main-scroll-view__availableQuests__availableQuests__list-view__scroll-view__HorizontalScroller__Slider__UnityEngine.UIElements.Scroller+ScrollerSlider
   m_Values:
+  - '{}'
+  - '{}'
+  - '{}'
+  - '{}'
   - '{}'
   - '{}'
   - '{}'

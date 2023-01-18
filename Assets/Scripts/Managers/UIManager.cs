@@ -16,6 +16,7 @@ public class UIManager : Singleton<UIManager>
     [SerializeField] private GameObject panelStats;
     [SerializeField] private GameObject panelInventory;
     [SerializeField] private GameObject panelInspectoQuests;
+    [SerializeField] private GameObject panelCharacterQuests;
 
 
     [Header("Bar")]
@@ -121,6 +122,12 @@ public class UIManager : Singleton<UIManager>
     {
         panelInventory.SetActive(!panelInventory.activeSelf);
     }
+
+    public void OpenClosePanelCharacterQuest()
+    {
+        panelCharacterQuests.SetActive(!panelCharacterQuests.activeSelf);
+    }
+
 
     public void OpenClosePanelQuests()
     {
