@@ -7,6 +7,8 @@ namespace Assets.Scripts.Characters
     public class Character: MonoBehaviour
     {
         [SerializeField] private CharacterStats stats;
+        
+        public CharacterExp characterExp { get; private set; }  
         public CharacterHealth _characterHealth { get; private set; }
         public CharacterAnimation _animation { get; private set; }
         public ManaCharacter _characterMana { get; private set; }
@@ -16,6 +18,7 @@ namespace Assets.Scripts.Characters
             _characterHealth= GetComponent<CharacterHealth>();  
             _animation= GetComponent<CharacterAnimation>();
             _characterMana = GetComponent<ManaCharacter>();
+            characterExp = GetComponent<CharacterExp>();
         }
 
         public void ResetCharacter()

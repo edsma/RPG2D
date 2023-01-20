@@ -21,5 +21,5 @@ MonoBehaviour:
   questRewardItem:
     item: {fileID: 11400000, guid: 39367d39787c7484abd4cea98cd6773b, type: 2}
     quantity: 2
-  questCompletedCheck: 1
-  actualQquantity: 50
+  questCompletedCheck: 0
+  actualQquantity: 10

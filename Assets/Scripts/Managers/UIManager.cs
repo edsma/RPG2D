@@ -17,6 +17,7 @@ public class UIManager : Singleton<UIManager>
     [SerializeField] private GameObject panelInventory;
     [SerializeField] private GameObject panelInspectoQuests;
     [SerializeField] private GameObject panelCharacterQuests;
+    [SerializeField] private GameObject panelQuestCompleted;
 
 
     [Header("Bar")]
@@ -29,6 +30,7 @@ public class UIManager : Singleton<UIManager>
     [SerializeField] private TextMeshProUGUI manaTMP;
     [SerializeField] private TextMeshProUGUI expTMP;
     [SerializeField] private TextMeshProUGUI levelTMP;
+    [SerializeField] private TextMeshProUGUI coinsTMP;
 
     [Header("Stats")]
     [SerializeField] private TextMeshProUGUI statDamageTmp;
@@ -71,6 +73,7 @@ public class UIManager : Singleton<UIManager>
         manaTMP.text = $"{Convert.ToInt32(actualMana)} / {maxMana}";
         expTMP.text = $"{actualExp} / {expRequiredForNextLevel}";
         levelTMP.text = $"Level: {stats.Level}";
+        coinsTMP.text = CoinsManager.Instance.totalsCoins.ToString();
     }
 
     private void UpdatePanelStats()
@@ -132,6 +135,11 @@ public class UIManager : Singleton<UIManager>
     public void OpenClosePanelQuests()
     {
         panelInspectoQuests.SetActive(!panelInspectoQuests.activeSelf);
+    }
+
+    public void OpenClosePanelQuestCompleted()
+    {
+        panelQuestCompleted.SetActive(!panelQuestCompleted.activeSelf);
     }
 
     public void OpenPanelInteraction(TypeIntearactionExtraNPC typeInteraction)

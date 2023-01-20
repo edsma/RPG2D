@@ -36,7 +36,7 @@ public class CharacterExp : MonoBehaviour
     }
 
     // Update is called once per frame
-    void AddExp(float expObtain)
+    public void AddExp(float expObtain)
     {
         if (expObtain > 0f)
         {

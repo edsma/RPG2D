@@ -34,6 +34,10 @@ public class CharacterQuestDescription : QuestDescription
 
     private void OnEnable()
     {
+        if (questForUpload.questCompletedCheck)
+        {
+            gameObject.SetActive(false);
+        }
         Quest.eventQuest += QuestCompletedAnswer;
     }
 

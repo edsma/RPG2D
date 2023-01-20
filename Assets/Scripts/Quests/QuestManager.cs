@@ -1,8 +1,14 @@
+using Assets.Scripts.Characters;
 using Assets.Scripts.Quests;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class QuestManager : Singleton<QuestManager>
 {
+    [Header("Character")]
+    [SerializeField] private Character character;
+
     [Header("Quests")]
     [SerializeField] private Quest[] availableQuests;
 
@@ -13,6 +19,15 @@ public class QuestManager : Singleton<QuestManager>
     [Header("Inspecto Quests")]
     [SerializeField] private CharacterQuestDescription characterQuestprefab;
     [SerializeField] private Transform characterQuestContainer;
+
+    [Header("Panel Quest")]
+    [SerializeField] private GameObject panelQuestCompleted;
+    [SerializeField] private TextMeshProUGUI questName;
+    [SerializeField] private TextMeshProUGUI questRewardGold;
+    [SerializeField] private TextMeshProUGUI questRewardExp;
+    [SerializeField] private TextMeshProUGUI questRewardItemQuantity;
+    [SerializeField] private Image questRewardIcon;
+    public Quest QuestForReclaim { get; private set; }
 
 
 
@@ -56,6 +71,49 @@ public class QuestManager : Singleton<QuestManager>
     {
         Quest questForUpdate = QuestExist(questId);
         questForUpdate.AddProgress(quantity);
+    }
+
+
+    private void ShowQuestCompleted(Quest questCompleted)
+    {
+        panelQuestCompleted.SetActive(true);
+        questName.text = questCompleted.Name;
+        questRewardGold.text = questCompleted.rewardGold.ToString();
+        questRewardExp.text = questCompleted.rewardExp.ToString();
+        questRewardItemQuantity.text = questCompleted.questRewardItem.quantity.ToString();
+        questRewardIcon.sprite = questCompleted.questRewardItem.item.Icon;
+    }
+
+    public void ReclaimReward()
+    {
+        if (QuestForReclaim == null)
+        {
+            return;
+        }
+        CoinsManager.Instance.AddCoins(QuestForReclaim.rewardGold);
+        character.characterExp.AddExp(QuestForReclaim.rewardExp);
+        Inventario.Instance.AddItem(QuestForReclaim.questRewardItem.item, QuestForReclaim.questRewardItem.quantity);
+        panelQuestCompleted.SetActive(false);
+        QuestForReclaim= null;
+    }
+
+    private void QuestCompletedAnswer(Quest completedQuest)
+    {
+        QuestForReclaim = QuestExist(completedQuest.Id);
+        if (QuestForReclaim != null)
+        {
+            ShowQuestCompleted(QuestForReclaim);
+        }
+    }
+
+    private void OnEnable()
+    {
+        Quest.eventQuest += QuestCompletedAnswer;
+    }
+
+    private void OnDisable()
+    {
+        Quest.eventQuest -= QuestCompletedAnswer;
     }
 
     private Quest QuestExist(string questId)

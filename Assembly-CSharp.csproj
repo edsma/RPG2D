@@ -92,6 +92,7 @@
     <Compile Include="Assets\Scripts\Quests\InspectorQuestDescription.cs" />
     <Compile Include="Assets\Scripts\Inventory\AddItems.cs" />
     <Compile Include="Assets\Scripts\Inventory\ItemPotionMana.cs" />
+    <Compile Include="Assets\Scripts\Managers\CoinsManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
