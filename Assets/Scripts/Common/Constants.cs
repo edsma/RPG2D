@@ -34,6 +34,12 @@ namespace Assets.Scripts.Common
             Destreza
         }
 
+        public enum TypeAttacks
+        {
+            Melee,
+            Embestida
+        }
+
         public enum TypesOfItem
         {
             Weapon,

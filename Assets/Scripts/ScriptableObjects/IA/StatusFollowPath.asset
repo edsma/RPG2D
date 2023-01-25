@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a93c33fff4e94d48b8cb69de45ced49, type: 3}
+  m_Name: StatusFollowPath
+  m_EditorClassIdentifier: 
+  actions:
+  - {fileID: 11400000, guid: b7cb738c36278864a9286f0dbf06305c, type: 2}
+  transactions:
+  - Decision: {fileID: 11400000, guid: 823d7243a91bc4d4ca2dd83ce06e29b6, type: 2}
+    EstadoVerdadero: {fileID: 11400000, guid: 67ca2185f1af2444abf4595692741b86, type: 2}
+    EstadoFalso: {fileID: 11400000, guid: b60db57d25e3a8147892ac6c5f49f366, type: 2}
