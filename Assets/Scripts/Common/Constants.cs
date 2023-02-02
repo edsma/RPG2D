@@ -40,6 +40,12 @@ namespace Assets.Scripts.Common
             Embestida
         }
 
+        public enum WeaponType
+        {
+            Magic,
+            Melee
+        }
+
         public enum TypesOfItem
         {
             Weapon,

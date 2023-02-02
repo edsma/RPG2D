@@ -50,9 +50,9 @@ TagManager:
   - name: Items
     uniqueID: 476266003
     locked: 0
-  - name: UI
-    uniqueID: 1329671743
-    locked: 0
   - name: Character
     uniqueID: 53774799
+    locked: 0
+  - name: UI
+    uniqueID: 1329671743
     locked: 0

@@ -1,4 +1,5 @@
 using Assets.Scripts;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,6 +7,8 @@ using static Assets.Scripts.Common.Constants;
 
 public class IAController : MonoBehaviour
 {
+    public static Action<float> eventDamageDone;
+
     [Header("Stats")]
     [SerializeField] private CharacterStats stats;
 
@@ -16,7 +19,10 @@ public class IAController : MonoBehaviour
     [Header("Config")]
     [SerializeField] private float rangeDetection;
     [SerializeField] private float rangeAttack;
+    [SerializeField] private float rangeEmbestida;
+
     [SerializeField] private float velocityMovement;
+    [SerializeField] private float velocityEmbestida;
     [SerializeField] private LayerMask  characterLayerMask;
 
     [Header("Attack")]
@@ -26,8 +32,10 @@ public class IAController : MonoBehaviour
 
     [Header("Debug")]
     [SerializeField] private bool debug;
+    [SerializeField] private bool debugEmbestida;
 
     private float timeForNextAttack;
+    private BoxCollider2D _boxCollider2D;
 
     public Transform characerReference { get;  set; }
     public IAEstado actualStatus { get; private set; }
@@ -37,15 +45,18 @@ public class IAController : MonoBehaviour
     public float Damage => damage;
     public float RangeAttack => rangeAttack;
 
-    private TypeAttacks TypeAttack =>  typeAttack;
+    public TypeAttacks TypeAttack =>  typeAttack;
 
     public float VelocityMovement => velocityMovement;
 
     public LayerMask CharacterLayerMask => characterLayerMask;
 
+    public float rangeOfAttackInitial => typeAttack == TypeAttacks.Embestida ? rangeEmbestida : rangeAttack;
+
 
     private void Start()
     {
+        _boxCollider2D= GetComponent<BoxCollider2D>();  
         actualStatus = initialStatus;
         enemyMovement = GetComponent<EnemyMovement>();
     }
@@ -85,16 +96,46 @@ public class IAController : MonoBehaviour
         }
     }
 
+    public void AttackEmbestida(float quantity)
+    {
+        StartCoroutine(IEEmbestida(quantity));
+    }
+
+    private IEnumerator IEEmbestida(float quantity)
+    {
+        Vector3 characterPosition = characerReference.position;
+        Vector3 initialPosition = transform.position;
+        Vector3 directionCharacter = (characterPosition - initialPosition).normalized;
+        Vector3 positionOfAttack = characterPosition - directionCharacter * 0.5f;
+        _boxCollider2D.enabled = false;
+
+        float transitionAttack = 0f;
+        while (transitionAttack <= 1f)
+        {
+            transitionAttack += Time.deltaTime * velocityMovement;
+            float interpolation = (-Mathf.Pow(transitionAttack, 2) + transitionAttack) * 4f;
+            transform.position = Vector3.Lerp(initialPosition, positionOfAttack, interpolation);
+            yield return null;
+        }
+
+        if (characerReference != null)
+        {
+            ApplyDamageToCharacter(quantity);
+        }
+        _boxCollider2D.enabled = true;
+    }
+
     public void ApplyDamageToCharacter(float quantity)
     {
         float damageToApply = 0;
-        if (Random.value < stats.percentajeBlock / 100)
+        if (UnityEngine.Random.value < stats.percentajeBlock / 100)
         {
             return;
         }
 
         damageToApply = Mathf.Max(quantity - stats.defense, 1f);
         characerReference.GetComponent<CharacterHealth>().GetDamege(damageToApply);
+        eventDamageDone?.Invoke(damageToApply);
     }
 
     public void UpdateTimeBeetwenAttacks()
@@ -116,6 +157,14 @@ public class IAController : MonoBehaviour
         {
             Gizmos.color = Color.green;
             Gizmos.DrawWireSphere(transform.position,rangeDetection);
+        
+        }
+
+        if (debugEmbestida)
+        {
+            Gizmos.color = Color.red;
+            Gizmos.DrawWireSphere(transform.position, rangeAttack);
+            Gizmos.DrawWireSphere(transform.position, rangeEmbestida);
         }
     }
 }

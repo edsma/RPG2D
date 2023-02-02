@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using static Assets.Scripts.Common.Constants;
 
 namespace Assets.Scripts.IA.Actions
 {
@@ -23,9 +24,17 @@ namespace Assets.Scripts.IA.Actions
                 return;
             }
 
-            if (controller.CharacterRangeAttack(controller.RangeAttack))
+            if (controller.CharacterRangeAttack(controller.rangeOfAttackInitial))
             {
-                controller.MeleeAttack(controller.Damage);
+                if (controller.TypeAttack.Equals(TypeAttacks.Embestida))
+                {
+                    controller.AttackEmbestida(controller.Damage);
+                }
+                else
+                {
+                    controller.MeleeAttack(controller.Damage);
+                }
+                
                 controller.UpdateTimeBeetwenAttacks();
             }
         }

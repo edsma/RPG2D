@@ -18,7 +18,7 @@ public class DecitionCharacterRangeAttack : IADecision
         }
 
         float distance = (controller.characerReference.position - controller.transform.position).sqrMagnitude;
-        if (distance < Mathf.Pow(controller.RangeAttack,1))
+        if (distance < Mathf.Pow(controller.rangeOfAttackInitial,1))
         {
             return true;
         }

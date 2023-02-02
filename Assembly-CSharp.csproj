@@ -67,6 +67,7 @@
     <Compile Include="Assets\Scripts\Extras\ZonaConfiner.cs" />
     <Compile Include="Assets\Scripts\Characters\CharacterAnimation.cs" />
     <Compile Include="Assets\Scripts\Quests\CharacterQuestDescription.cs" />
+    <Compile Include="Assets\Scripts\Inventory\ItemWeapon.cs" />
     <Compile Include="Assets\Scripts\Extras\AtributteButton.cs" />
     <Compile Include="Assets\Scripts\IA\Actions\ActionAttackCharacter.cs" />
     <Compile Include="Assets\Scripts\Dialogs\DialogManager.cs" />
@@ -80,8 +81,10 @@
     <Compile Include="Assets\Scripts\Waypoint\Waypoint.cs" />
     <Compile Include="Assets\Scripts\IA\System IA\AITransicion.cs" />
     <Compile Include="Assets\Scripts\Characters\CharacterHealth.cs" />
+    <Compile Include="Assets\Scripts\Extras\ObjectPooler.cs" />
     <Compile Include="Assets\Scripts\IA\System IA\IAController.cs" />
     <Compile Include="Assets\Scripts\Quests\QuestDescription.cs" />
+    <Compile Include="Assets\Scripts\Dialogs\TextAnimation.cs" />
     <Compile Include="Assets\Scripts\Inventory\InventoryUI.cs" />
     <Compile Include="Assets\Scripts\Characters\BaseHealth.cs" />
     <Compile Include="Assets\Scripts\Common\Constants.cs" />
@@ -89,6 +92,7 @@
     <Compile Include="Assets\Scripts\IA\Decitions\DecitionDetectCharacter.cs" />
     <Compile Include="Assets\Scripts\Characters\CharacterExp.cs" />
     <Compile Include="Assets\Scripts\Characters\Character.cs" />
+    <Compile Include="Assets\Scripts\Characters\CharacterFX.cs" />
     <Compile Include="Assets\Scripts\Quests\QuestRewardItem.cs" />
     <Compile Include="Assets\Scripts\Managers\UIManager.cs" />
     <Compile Include="Assets\Scripts\IA\Actions\ActionInactivePathMovement.cs" />
@@ -99,6 +103,7 @@
     <Compile Include="Assets\Scripts\Quests\QuestManager.cs" />
     <Compile Include="Assets\Scripts\IA\Actions\ActionActivatePathMovement.cs" />
     <Compile Include="Assets\Scripts\Waypoint\WaypointMovement.cs" />
+    <Compile Include="Assets\Scripts\Weapons\Weapon.cs" />
     <Compile Include="Assets\Scripts\Quests\InspectorQuestDescription.cs" />
     <Compile Include="Assets\Scripts\Inventory\AddItems.cs" />
     <Compile Include="Assets\Scripts\Inventory\ItemPotionMana.cs" />
