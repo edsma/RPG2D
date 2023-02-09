@@ -21,4 +21,4 @@ MonoBehaviour:
   canHaveMany: 0
   maxQuantity: 1
   quantity: 0
-  weapon: {fileID: 11400000, guid: 27479307bab225340bb4ec752b7373ac, type: 2}
+  weapon: {fileID: 11400000, guid: c817a8f3a0ba5de4793b5781b761cc05, type: 2}

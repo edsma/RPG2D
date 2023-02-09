@@ -16,6 +16,7 @@ MonoBehaviour:
   skillIcon: {fileID: -967474987, guid: 6358a7d3d46abfc4b99bd43ffc5343f9, type: 3}
   type: 0
   damage: 4
+  proyectilPrefab: {fileID: 1908266823741422907, guid: c82ce3668a71b724490e77cb9de8fb13, type: 3}
   manaRequired: 10
   criticDamage: 1.5
   blockPosibility: 0.5

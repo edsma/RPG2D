@@ -146,7 +146,37 @@ public class Inventario : Singleton<Inventario>
         }
     }
 
-    private void SlotInteractionResponse(Constants.TypeOfInteraction type, int index)
+    private void EquipItem(int index)
+    {
+        if (itemsInventory[index] == null)
+        {
+            return;
+        }
+
+        if (itemsInventory[index].Type != TypesOfItem.Weapon)
+        {
+            return;
+        }
+
+        itemsInventory[index].EquipItem();
+    }
+
+    private void RemoveItem(int index)
+    {
+        if (itemsInventory[index] == null)
+        {
+            return;
+        }
+
+        if (itemsInventory[index].Type != TypesOfItem.Weapon)
+        {
+            return;
+        }
+
+        itemsInventory[index].RemoveItem();
+    }
+
+    private void SlotInteractionResponse(TypeOfInteraction type, int index)
     {
         switch (type)
         {
@@ -154,10 +184,10 @@ public class Inventario : Singleton<Inventario>
                 UseItem(index);
                 break;
             case TypeOfInteraction.Equip:
-
+                EquipItem(index);
                 break;
             case TypeOfInteraction.remove:
-                DeleteItem(index);
+                RemoveItem(index);
                 break;
         }
     }

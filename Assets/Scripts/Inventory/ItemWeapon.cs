@@ -7,5 +7,26 @@ public class ItemWeapon : InventoryItem
 {
     [Header("Weapon")] public Weapon weapon;
 
+    public override bool EquipItem()
+    {
+        if (ContainerWeapon.Instance.equipedWeapon != null)
+        {
+            return false;
+        }
+
+        ContainerWeapon.Instance.EquipArm(this);
+        return true;
+    }
+
+    public override bool RemoveItem()
+    {
+        if (ContainerWeapon.Instance.equipedWeapon == null)
+        {
+            return false;
+        }
+
+        ContainerWeapon.Instance.RemoveWeapon();
+        return true;
+    }
 
 }

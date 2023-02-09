@@ -25,6 +25,7 @@ namespace Assets.Scripts.Common
         public struct Tags
         {
             public const string player = "Player";
+            public const string enemy = "Enemy";
         }
 
         public enum TypeAtributte
@@ -54,6 +55,8 @@ namespace Assets.Scripts.Common
             Ingredients,
             Treasures
         }
+
+
 
         public enum TypeOfInteraction
         {

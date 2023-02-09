@@ -38,6 +38,22 @@ public class InventoryUI : Singleton<InventoryUI>
         }
     }
 
+    public void EquipItem()
+    {
+        if (SlotSelected != null)
+        {
+            SlotSelected.SlotEquipItem();
+        }
+    }
+
+    public void RemoveItem()
+    {
+        if (SlotSelected != null)
+        {
+            SlotSelected.SlotRemoveItem();
+        }
+    }
+
     void StartInventary()
     {
         for (int i = 0; i < Inventario.Instance.NumberOfSlots; i++)

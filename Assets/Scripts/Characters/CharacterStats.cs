@@ -33,6 +33,20 @@ public class CharacterStats : ScriptableObject
         percentajeForCritic += 0.30f;
     }
 
+    public void AddBonusForWeapon(Weapon weapon)
+    {
+        damage += weapon.damage;
+        percentajeForCritic +=  weapon.criticDamage;
+        percentajeBlock += weapon.blockPosibility;
+    }
+
+    public void RemoveBonusForWeapon(Weapon weapon)
+    {
+        damage -= weapon.damage;
+        percentajeForCritic -= weapon.criticDamage;
+        percentajeBlock -= weapon.blockPosibility;
+    }
+
     public void AddBonusAtributtesDestreza()
     {
         Velocity += 0.5f;

@@ -8,6 +8,7 @@ namespace Assets.Scripts.Characters
     {
         [SerializeField] private CharacterStats stats;
         
+        public CharacterAttack _characterAttack { get; private set; }
         public CharacterExp characterExp { get; private set; }  
         public CharacterHealth _characterHealth { get; private set; }
         public CharacterAnimation _animation { get; private set; }
@@ -15,6 +16,7 @@ namespace Assets.Scripts.Characters
 
         private void Awake()
         {
+            _characterAttack= GetComponent<CharacterAttack>();
             _characterHealth= GetComponent<CharacterHealth>();  
             _animation= GetComponent<CharacterAnimation>();
             _characterMana = GetComponent<ManaCharacter>();

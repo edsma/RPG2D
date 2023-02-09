@@ -1,3 +1,4 @@
+using Assets.Scripts.Weapons;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,6 +14,7 @@ public class Weapon : ScriptableObject
     public float damage;
 
     [Header("Magic Weapon")]
+    public Proyectil proyectilPrefab;
     public float manaRequired;
 
     [Header("Stats")]

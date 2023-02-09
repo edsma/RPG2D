@@ -5,20 +5,21 @@ using UnityEngine;
 
 public class CharacterFX : MonoBehaviour
 {
+    [Header("Ppoler")]
+    [SerializeField] private ObjectPooler pooler;
+
+    [Header("Config")]
     [SerializeField] private GameObject canvasTextAnimationPrefab;
     [SerializeField] private Transform canvasTextPosition;
 
-    private ObjectPooler pooler;
     // Start is called before the first frame update
-    void Awake()
-    {
-        pooler= GetComponent<ObjectPooler>();
-    }
+
 
     private void Start()
     {
         pooler.CreatePooler(canvasTextAnimationPrefab);
     }
+
 
     private IEnumerator IEShowText(float quantity)
     {

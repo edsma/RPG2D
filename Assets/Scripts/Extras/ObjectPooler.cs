@@ -27,6 +27,13 @@ public class ObjectPooler : MonoBehaviour
         return newObject;
     }
 
+
+    public void DestroyPooler()
+    {
+        Destroy(containerList);
+        list.Clear();
+    }
+
     public GameObject ObtainInstance() 
     {
         for (int i = 0; i < list.Count; i++)

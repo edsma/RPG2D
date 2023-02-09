@@ -57,4 +57,20 @@ public class InventorySlot : MonoBehaviour
          
         }
     }
+
+    public void SlotEquipItem()
+    {
+        if (Inventario.Instance.ItemsInventory[Index] != null)
+        {
+            eventSlotInteraction?.Invoke(TypeOfInteraction.Equip, Index);
+        }
+    }
+
+    public void SlotRemoveItem()
+    {
+        if (Inventario.Instance.ItemsInventory[Index] != null)
+        {
+            eventSlotInteraction?.Invoke(TypeOfInteraction.remove, Index);
+        }
+    }
 }
