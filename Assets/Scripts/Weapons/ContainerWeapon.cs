@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using static Assets.Scripts.Common.Constants;
 
 public class ContainerWeapon : Singleton<ContainerWeapon>
 {
@@ -12,8 +13,12 @@ public class ContainerWeapon : Singleton<ContainerWeapon>
     {
         weaponIcon.sprite = weapon.weapon.weaponIcon;
         weaponIcon.gameObject.SetActive(true);
-        skillIcon.sprite = weapon.weapon.skillIcon;
-        skillIcon.gameObject.SetActive(true);
+        if (weapon.weapon.type.Equals(WeaponType.Magic))
+        {
+            skillIcon.sprite = weapon.weapon.skillIcon;
+            skillIcon.gameObject.SetActive(true);
+        }
+        
         Inventario.Instance.character._characterAttack.EquipWeapon(weapon);
     }
 

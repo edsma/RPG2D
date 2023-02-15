@@ -80,6 +80,7 @@
     <Compile Include="Assets\Scripts\Waypoint\NpcMovement.cs" />
     <Compile Include="Assets\Scripts\Characters\ManaCharacter.cs" />
     <Compile Include="Assets\Scripts\Waypoint\Waypoint.cs" />
+    <Compile Include="Assets\Scripts\Characters\CharacterDetector.cs" />
     <Compile Include="Assets\Scripts\IA\System IA\AITransicion.cs" />
     <Compile Include="Assets\Scripts\Characters\CharacterHealth.cs" />
     <Compile Include="Assets\Scripts\Extras\ObjectPooler.cs" />
@@ -102,6 +103,7 @@
     <Compile Include="Assets\Scripts\IA\System IA\IAAction.cs" />
     <Compile Include="Assets\Scripts\Weapons\ContainerWeapon.cs" />
     <Compile Include="Assets\Scripts\Managers\LevelManager.cs" />
+    <Compile Include="Assets\Scripts\IA\EnemyBarLife.cs" />
     <Compile Include="Assets\Scripts\Characters\MovementCharacter.cs" />
     <Compile Include="Assets\Scripts\Quests\QuestManager.cs" />
     <Compile Include="Assets\Scripts\IA\Actions\ActionActivatePathMovement.cs" />
@@ -113,6 +115,7 @@
     <Compile Include="Assets\Scripts\Inventory\AddItems.cs" />
     <Compile Include="Assets\Scripts\Inventory\ItemPotionMana.cs" />
     <Compile Include="Assets\Scripts\IA\EnemyMovement.cs" />
+    <Compile Include="Assets\Scripts\IA\EnemyHealth.cs" />
     <Compile Include="Assets\Scripts\IA\System IA\IAEstado.cs" />
     <Compile Include="Assets\Scripts\Managers\CoinsManager.cs" />
   </ItemGroup>

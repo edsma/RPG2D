@@ -7,19 +7,23 @@ public class CharacterAnimation : MonoBehaviour
 {
     [SerializeField] private string layerIdle;
     [SerializeField] private string layerWalking;
+    [SerializeField] private string layerAttack;
 
     private Animator _animator;
     private MovementCharacter _characterMovement;
+    private CharacterAttack _characterAttack;
     // Start is called before the first frame update
     void Awake()
     {
         _animator = GetComponent<Animator>();
         _characterMovement = GetComponent<MovementCharacter>();
+        _characterAttack = GetComponent<CharacterAttack>();
     }
 
     // Update is called once per frame
     void Update()
     {
+
         UpdateLayer();
         if (!_characterMovement.isMoving)
         {
@@ -40,7 +44,11 @@ public class CharacterAnimation : MonoBehaviour
 
     void UpdateLayer()
     {
-        if (_characterMovement.isMoving)
+
+        if (_characterAttack.isAttacking)
+        {
+            ActivateLayer(layerAttack);
+        }else if (_characterMovement.isMoving)
         {
             ActivateLayer(layerWalking);
         }

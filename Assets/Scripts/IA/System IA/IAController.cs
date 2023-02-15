@@ -117,12 +117,12 @@ public class IAController : MonoBehaviour
             transform.position = Vector3.Lerp(initialPosition, positionOfAttack, interpolation);
             yield return null;
         }
-
+        _boxCollider2D.enabled = true;
         if (characerReference != null)
         {
             ApplyDamageToCharacter(quantity);
         }
-        _boxCollider2D.enabled = true;
+       
     }
 
     public void ApplyDamageToCharacter(float quantity)

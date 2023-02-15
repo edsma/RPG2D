@@ -47,6 +47,12 @@ namespace Assets.Scripts.Common
             Melee
         }
 
+        public enum TypeDetection
+        {
+            Range,
+            Melee
+        }
+
         public enum TypesOfItem
         {
             Weapon,
