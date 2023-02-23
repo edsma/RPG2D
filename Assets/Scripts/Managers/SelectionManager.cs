@@ -1,4 +1,5 @@
 using Assets.Scripts.Common;
+using Assets.Scripts.IA;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -34,7 +35,16 @@ public class SelectionManager : MonoBehaviour
             if (hit.collider != null)
             {
                 enemySelected = hit.collider.GetComponent<EnemyInteraction>();
-                eventEnemySelected?.Invoke(enemySelected);
+                EnemyHealth enemyHealth = enemySelected.GetComponent<EnemyHealth>();
+                if (enemyHealth.Health > 0 )
+                {
+                    eventEnemySelected?.Invoke(enemySelected);
+                }
+                else
+                {
+                    EnemyLoot loot = enemySelected.GetComponent<EnemyLoot>();
+                    LootManager.Instance.ShowLoot(loot);
+                }
             }
             else
             {

@@ -47,6 +47,12 @@ namespace Assets.Scripts.Common
             Melee
         }
 
+        public enum TypeCharacter
+        {
+            Player,
+            IA
+        }
+
         public enum TypeDetection
         {
             Range,

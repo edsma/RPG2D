@@ -1,4 +1,5 @@
 using Assets.Scripts.Common;
+using Assets.Scripts.IA;
 using Assets.Scripts.Weapons;
 using System;
 using System.Collections;
@@ -7,10 +8,10 @@ using static Assets.Scripts.Common.Constants;
 
 public class CharacterAttack : MonoBehaviour
 {
+    public static Action <float> eventEnemyDamage {  get; set; }
+
     [Header("Stats")]
     [SerializeField] private CharacterStats stats;
-
-    
     public Weapon equipedWeapon { get; private set; }
     public EnemyInteraction EnemyTarget { get; private set; }
 
@@ -51,6 +52,17 @@ public class CharacterAttack : MonoBehaviour
         }
     }
 
+    public float ObtainDamage()
+    {
+        System.Random rnd = new System.Random();
+        float quantity = stats.damage;
+        if (rnd.Next(10) < stats.percentajeForCritic / 100)
+        {
+            quantity *= 2;
+        }
+        return quantity;
+    }
+
     private IEnumerator IEEstableAttackCondition()
     {
         isAttacking = true;
@@ -71,11 +83,18 @@ public class CharacterAttack : MonoBehaviour
             newProyectile.transform.localPosition = positionShoot[indexDirectionShoot].position;
 
             Proyectil proyectil = newProyectile.GetComponent<Proyectil>();
-            proyectil.InitializeProyectil(EnemyTarget);
+            proyectil.InitializeProyectil(this);
 
             newProyectile.SetActive(true);
             _manaCharacter.UseMana(equipedWeapon.manaRequired);
 
+        }
+        else
+        {
+            float damage = ObtainDamage();
+            EnemyHealth enemyLife = EnemyTarget.GetComponent<EnemyHealth>();
+            enemyLife.GetDamege(damage);
+            eventEnemyDamage?.Invoke(damage);
         }
     }
 

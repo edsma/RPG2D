@@ -70,7 +70,9 @@
     <Compile Include="Assets\Scripts\Quests\CharacterQuestDescription.cs" />
     <Compile Include="Assets\Scripts\Inventory\ItemWeapon.cs" />
     <Compile Include="Assets\Scripts\Extras\AtributteButton.cs" />
+    <Compile Include="Assets\Scripts\IA\EnemyLoot.cs" />
     <Compile Include="Assets\Scripts\IA\Actions\ActionAttackCharacter.cs" />
+    <Compile Include="Assets\Scripts\Loot\DropItem.cs" />
     <Compile Include="Assets\Scripts\Dialogs\DialogManager.cs" />
     <Compile Include="Assets\Scripts\IA\Decitions\DecitionCharacterRangeAttack.cs" />
     <Compile Include="Assets\Scripts\Extras\Singleton.cs" />
@@ -83,6 +85,7 @@
     <Compile Include="Assets\Scripts\Characters\CharacterDetector.cs" />
     <Compile Include="Assets\Scripts\IA\System IA\AITransicion.cs" />
     <Compile Include="Assets\Scripts\Characters\CharacterHealth.cs" />
+    <Compile Include="Assets\Scripts\Loot\LootButton.cs" />
     <Compile Include="Assets\Scripts\Extras\ObjectPooler.cs" />
     <Compile Include="Assets\Scripts\IA\System IA\IAController.cs" />
     <Compile Include="Assets\Scripts\Quests\QuestDescription.cs" />
@@ -101,6 +104,7 @@
     <Compile Include="Assets\Scripts\IA\Actions\ActionInactivePathMovement.cs" />
     <Compile Include="Assets\Scripts\IA\Actions\ActionsFollowCharacter.cs" />
     <Compile Include="Assets\Scripts\IA\System IA\IAAction.cs" />
+    <Compile Include="Assets\Scripts\Loot\LootManager.cs" />
     <Compile Include="Assets\Scripts\Weapons\ContainerWeapon.cs" />
     <Compile Include="Assets\Scripts\Managers\LevelManager.cs" />
     <Compile Include="Assets\Scripts\IA\EnemyBarLife.cs" />

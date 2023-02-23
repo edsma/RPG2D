@@ -20,7 +20,12 @@ public class EnemyInteraction : MonoBehaviour
                 break;
             default:
                 break;
-        }
-        
+        }   
+    }
+
+    public void DesactiveSpriteSelection()
+    {
+        selectionFX.SetActive(false);
+        selectionMeleeFx.SetActive(false);
     }
 }

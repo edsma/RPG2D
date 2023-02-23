@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static Assets.Scripts.Common.Constants;
 
 public class CharacterFX : MonoBehaviour
 {
@@ -12,6 +13,9 @@ public class CharacterFX : MonoBehaviour
     [SerializeField] private GameObject canvasTextAnimationPrefab;
     [SerializeField] private Transform canvasTextPosition;
 
+    [Header("Type")]
+    [SerializeField] private TypeCharacter typeCharacter;
+
     // Start is called before the first frame update
 
 
@@ -21,11 +25,11 @@ public class CharacterFX : MonoBehaviour
     }
 
 
-    private IEnumerator IEShowText(float quantity)
+    private IEnumerator IEShowText(float quantity, Color color)
     {
         GameObject newTextGo = pooler.ObtainInstance();
         TextAnimation text = newTextGo.GetComponent<TextAnimation>();
-        text.SetText(quantity);
+        text.SetText(quantity,color);
         newTextGo.transform.SetParent(canvasTextPosition);
         newTextGo.transform.position = canvasTextPosition.position;
         newTextGo.SetActive(true);
@@ -38,15 +42,29 @@ public class CharacterFX : MonoBehaviour
     private void OnEnable()
     {
         IAController.eventDamageDone += AnswerForDamage;
+        CharacterAttack.eventEnemyDamage += AnswerDamageToEnemy;
     }
 
     private void AnswerForDamage(float damage)
     {
-        StartCoroutine(IEShowText(damage));
+        if (typeCharacter.Equals(TypeCharacter.Player))
+        {
+            StartCoroutine(IEShowText(damage, Color.red));
+        }
+        
     }
 
     private void OnDisable()
     {
         IAController.eventDamageDone -= AnswerForDamage;
+        CharacterAttack.eventEnemyDamage -= AnswerDamageToEnemy;
+    }
+
+    private void AnswerDamageToEnemy(float damage)
+    {
+        if (typeCharacter.Equals(TypeCharacter.IA))
+        {
+            StartCoroutine(IEShowText(damage,Color.white));
+        }
     }
 }

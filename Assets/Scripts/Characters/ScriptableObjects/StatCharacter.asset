@@ -12,14 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38073050529ddeb4694ed8937a48b2c6, type: 3}
   m_Name: StatCharacter
   m_EditorClassIdentifier: 
-  damage: 8
+  damage: 11
   defense: 3
   Velocity: 11
-  Level: 3
+  Level: 1
   ExpActual: 16
   ExpForNextLevel: 8
-  percentajeForCritic: 0.3
-  percentajeBlock: 0.22999999
+  percentajeForCritic: 31.8
+  percentajeBlock: 10.73
   Strenght: 1
   Intelligence: 1
   Destreza: 2

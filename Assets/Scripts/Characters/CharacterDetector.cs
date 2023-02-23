@@ -1,4 +1,5 @@
 using Assets.Scripts.Common;
+using Assets.Scripts.IA;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -15,7 +16,11 @@ public class CharacterDetector : MonoBehaviour
         if (collision.CompareTag(Constants.Tags.enemy))
         {
             enemyInteraction = collision.GetComponent<EnemyInteraction>();
-            eventEnemyDectection?.Invoke(enemyInteraction);
+            if (enemyInteraction.GetComponent<EnemyHealth>().Health > 0)
+            {
+                eventEnemyDectection?.Invoke(enemyInteraction);
+            }
+            
         }
     }
 

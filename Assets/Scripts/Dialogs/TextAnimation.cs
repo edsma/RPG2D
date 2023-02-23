@@ -7,8 +7,9 @@ public class TextAnimation : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI damageText;
 
-    public void SetText(float quantity)
+    public void SetText(float quantity, Color color)
     {
         damageText.text = quantity.ToString();
+        damageText.color= color;
     }
 }
