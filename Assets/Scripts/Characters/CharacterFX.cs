@@ -1,3 +1,4 @@
+using Assets.Scripts.IA;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -17,7 +18,12 @@ public class CharacterFX : MonoBehaviour
     [SerializeField] private TypeCharacter typeCharacter;
 
     // Start is called before the first frame update
+    private EnemyHealth _enemyHealth;
 
+    private void Awake()
+    {
+        _enemyHealth = GetComponent<EnemyHealth>();
+    }
 
     private void Start()
     {
@@ -42,7 +48,7 @@ public class CharacterFX : MonoBehaviour
     private void OnEnable()
     {
         IAController.eventDamageDone += AnswerForDamage;
-        CharacterAttack.eventEnemyDamage += AnswerDamageToEnemy;
+        CharacterAttack.EventEnemyDamage += AnswerDamageToEnemy;
     }
 
     private void AnswerForDamage(float damage)
@@ -57,12 +63,12 @@ public class CharacterFX : MonoBehaviour
     private void OnDisable()
     {
         IAController.eventDamageDone -= AnswerForDamage;
-        CharacterAttack.eventEnemyDamage -= AnswerDamageToEnemy;
+        CharacterAttack.EventEnemyDamage -= AnswerDamageToEnemy;
     }
 
-    private void AnswerDamageToEnemy(float damage)
+    private void AnswerDamageToEnemy(float damage, EnemyHealth enemyHealth)
     {
-        if (typeCharacter.Equals(TypeCharacter.IA))
+        if (typeCharacter.Equals(TypeCharacter.IA) && _enemyHealth.Equals(enemyHealth))
         {
             StartCoroutine(IEShowText(damage,Color.white));
         }

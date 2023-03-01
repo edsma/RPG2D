@@ -8,7 +8,7 @@ using static Assets.Scripts.Common.Constants;
 
 public class CharacterAttack : MonoBehaviour
 {
-    public static Action <float> eventEnemyDamage {  get; set; }
+    public static Action<float, EnemyHealth> EventEnemyDamage;
 
     [Header("Stats")]
     [SerializeField] private CharacterStats stats;
@@ -94,7 +94,7 @@ public class CharacterAttack : MonoBehaviour
             float damage = ObtainDamage();
             EnemyHealth enemyLife = EnemyTarget.GetComponent<EnemyHealth>();
             enemyLife.GetDamege(damage);
-            eventEnemyDamage?.Invoke(damage);
+            EventEnemyDamage?.Invoke(damage, enemyLife);
         }
     }
 

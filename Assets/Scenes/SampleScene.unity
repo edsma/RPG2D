@@ -1030,6 +1030,7 @@ MonoBehaviour:
   panelInspectoQuests: {fileID: 500931576}
   panelCharacterQuests: {fileID: 1387438604}
   panelQuestCompleted: {fileID: 540136129}
+  panelLot: {fileID: 2115125127}
   playerHealth: {fileID: 1167074164}
   playerMana: {fileID: 1499882462}
   playerExp: {fileID: 622497316}
@@ -7598,7 +7599,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 91670054}
         m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
-        m_MethodName: OpenClosePanelQuests
+        m_MethodName: OpenClosePanelLot
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

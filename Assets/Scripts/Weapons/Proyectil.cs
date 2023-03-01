@@ -51,8 +51,9 @@ namespace Assets.Scripts.Weapons
             if (collision.CompareTag(Constants.Tags.enemy))
             {
                 float damage = characterAttack.ObtainDamage();
-                enemyTarget.GetComponent<EnemyHealth>().GetDamege(damage);
-                CharacterAttack.eventEnemyDamage?.Invoke(damage);
+                EnemyHealth enemyLife = enemyTarget.GetComponent<EnemyHealth>();
+                enemyLife.GetDamege(damage);
+                CharacterAttack.EventEnemyDamage?.Invoke(damage, enemyLife);
                 gameObject.SetActive(false);
             }
         }

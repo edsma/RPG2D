@@ -7,7 +7,7 @@ using UnityEngine;
 
 namespace Assets.Scripts.IA
 {
-    internal class EnemyHealth: BaseHealth
+    public class EnemyHealth: BaseHealth
     {
         [Header("Life")]
         [SerializeField] private EnemyBarLife barLifePrefab;

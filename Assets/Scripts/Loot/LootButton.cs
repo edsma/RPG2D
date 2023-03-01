@@ -15,4 +15,16 @@ public class LootButton : MonoBehaviour
         itemIcon.sprite = ItemPickeUp.Item.Icon;
         itemName.text= $"{ItemPickeUp.Item.Name} x {ItemPickeUp.Amount}";
     }
+
+    public void GetItem()
+    {
+        if (ItemPickeUp == null)
+        {
+            return;
+        }
+
+        Inventario.Instance.AddItem(ItemPickeUp.Item, ItemPickeUp.Amount);
+        ItemPickeUp.ItemPickeUp = true;
+        Destroy(gameObject);
+    }
 }
