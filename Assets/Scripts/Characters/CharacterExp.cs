@@ -1,3 +1,5 @@
+using Assets.Scripts.IA;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -73,6 +75,21 @@ public class CharacterExp : MonoBehaviour
             stats.pointAvailable += 3;
             stats.Level++;
         }
+    }
+
+    private void OnEnable()
+    {
+        EnemyHealth.eventEnemyDefeated += AnswerEnemyDefeated;
+    }
+
+    private void OnDisable()
+    {
+        EnemyHealth.eventEnemyDefeated -= AnswerEnemyDefeated;
+    }
+
+    private void AnswerEnemyDefeated(float exp)
+    {
+        AddExp(exp);
     }
 
     private void UpdateBarExp()

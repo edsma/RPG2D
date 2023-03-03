@@ -9,6 +9,8 @@ namespace Assets.Scripts.IA
 {
     public class EnemyHealth: BaseHealth
     {
+        public static Action<float> eventEnemyDefeated;
+
         [Header("Life")]
         [SerializeField] private EnemyBarLife barLifePrefab;
         [SerializeField] private Transform barLifePosition;
@@ -19,6 +21,7 @@ namespace Assets.Scripts.IA
         private EnemyBarLife _enemyBarLifeCreate;
         private EnemyInteraction _enemyInteraction;
         private EnemyMovement _enemyMovement;
+        private EnemyLoot _enemyLootCreate;
         private SpriteRenderer _spriteRenderer;
         private BoxCollider2D _boxCollider2D;
         private IAController _controller;
@@ -28,7 +31,8 @@ namespace Assets.Scripts.IA
             _enemyInteraction= GetComponent<EnemyInteraction>();
             _enemyMovement= GetComponent<EnemyMovement>();
             _spriteRenderer = GetComponent<SpriteRenderer>();
-            _boxCollider2D= GetComponent<BoxCollider2D>();
+            _enemyLootCreate = GetComponent<EnemyLoot>();
+            _boxCollider2D = GetComponent<BoxCollider2D>();
             _controller = GetComponent<IAController>(); 
 
         }
@@ -53,6 +57,10 @@ namespace Assets.Scripts.IA
         protected override void CharacterIsDefeated()
         {
             DesativeEnemy();
+            eventEnemyDefeated?.Invoke(_enemyLootCreate.WonExp);
+            QuestManager.Instance.AddProgress("Kill10",1);
+            QuestManager.Instance.AddProgress("Kill25", 1);
+            QuestManager.Instance.AddProgress("Kill50", 1);
         }
 
         private void DesativeEnemy()

@@ -5,11 +5,16 @@ namespace Assets.Scripts.IA
 {
     public class EnemyLoot : MonoBehaviour
     {
+        [Header("Exp")]
+        [SerializeField] private float wonExp;
+
         [Header("Root")]
         [SerializeField] private DropItem[] lootAvailable;
 
         private List<DropItem> lootSelected = new List<DropItem>();
         public List<DropItem> LootSelected => lootSelected;
+
+        public float WonExp => wonExp;
 
         private void Start()
         {

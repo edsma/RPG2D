@@ -87,6 +87,7 @@
     <Compile Include="Assets\Scripts\Characters\CharacterHealth.cs" />
     <Compile Include="Assets\Scripts\Loot\LootButton.cs" />
     <Compile Include="Assets\Scripts\Extras\ObjectPooler.cs" />
+    <Compile Include="Assets\Scripts\Extras\Portal.cs" />
     <Compile Include="Assets\Scripts\IA\System IA\IAController.cs" />
     <Compile Include="Assets\Scripts\Quests\QuestDescription.cs" />
     <Compile Include="Assets\Scripts\Dialogs\TextAnimation.cs" />
