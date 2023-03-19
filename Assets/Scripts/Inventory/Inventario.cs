@@ -68,6 +68,29 @@ public class Inventario : Singleton<Inventario>
         }
     }
 
+    public int GetAmountOfItems(string itemId)
+    {
+        List<int> indexs = ValidateExistCapacity(itemId);
+        int totalAmount = 0;
+        foreach (var index in indexs)
+        {
+            if (itemsInventory[index].Id.Equals(itemId))
+            {
+                totalAmount += itemsInventory[index].quantity;
+            }
+        }
+        return totalAmount;
+    }
+
+    public void ConsumeItem(string itemId)
+    {
+        List<int> indexes = ValidateExistCapacity(itemId);
+        if (indexes.Count > 0)
+        {
+            DeleteItem(indexes[indexes.Count - 1]);
+        }
+    }
+
     private void AddItemDisponibilitySlot(InventoryItem item,int quantity)
     {
         for (int i = 0; i < itemsInventory.Length; i++)

@@ -65,7 +65,8 @@ namespace Assets.Scripts.Common
             Potion,
             Materia,
             Ingredients,
-            Treasures
+            Treasures,
+            Parchment
         }
 
 

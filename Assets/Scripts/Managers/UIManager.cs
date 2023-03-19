@@ -14,11 +14,13 @@ public class UIManager : Singleton<UIManager>
 
     [Header("Panel ")]
     [SerializeField] private GameObject panelStats;
+    [SerializeField] private GameObject panelaStore;
     [SerializeField] private GameObject panelInventory;
     [SerializeField] private GameObject panelInspectoQuests;
     [SerializeField] private GameObject panelCharacterQuests;
     [SerializeField] private GameObject panelQuestCompleted;
     [SerializeField] private GameObject panelLot;
+    [SerializeField] private GameObject panelCrafting;
 
 
     [Header("Bar")]
@@ -132,6 +134,10 @@ public class UIManager : Singleton<UIManager>
         panelCharacterQuests.SetActive(!panelCharacterQuests.activeSelf);
     }
 
+    public void OpenClosePanelStore()
+    {
+        panelaStore.SetActive(!panelCrafting.activeSelf);
+    }
 
     public void OpenClosePanelQuests()
     {
@@ -147,6 +153,15 @@ public class UIManager : Singleton<UIManager>
     {
         panelLot.SetActive(!panelLot.activeSelf);
     }
+    public void OpenClosePanelCrafting()
+    {
+        panelCrafting.SetActive(!panelCrafting.activeSelf);
+    }
+
+    public void OpenClosePanelCraftingInformation()
+    {
+        panelCrafting.SetActive(!panelCrafting.activeSelf);
+    }
 
     public void OpenPanelInteraction(TypeIntearactionExtraNPC typeInteraction)
     {
@@ -156,8 +171,10 @@ public class UIManager : Singleton<UIManager>
                 OpenClosePanelQuests();
                 break;
             case TypeIntearactionExtraNPC.store:
+                OpenClosePanelStore();
                 break;
             case TypeIntearactionExtraNPC.crafting:
+                OpenClosePanelCrafting();
                 break;
             default:
                 break;

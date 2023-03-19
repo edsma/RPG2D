@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -28,5 +29,12 @@ public class ItemWeapon : InventoryItem
         ContainerWeapon.Instance.RemoveWeapon();
         return true;
     }
+
+    public override string DescriptionItemCrafting()
+    {
+        return $"- Chance critico: {weapon.criticDamage} {Environment.NewLine}" +
+            $"- Chance bloqueo: {weapon.blockPosibility}";
+    }
+
 
 }

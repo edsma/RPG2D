@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f62df8cb8d04704fa499283d33e7e8a, type: 3}
+  m_Name: ListOfRecipe
+  m_EditorClassIdentifier: 
+  Recipes:
+  - Name: MegaPack
+    Item1: {fileID: 11400000, guid: 39367d39787c7484abd4cea98cd6773b, type: 2}
+    Item1AmountRequired: 2
+    Item2: {fileID: 11400000, guid: f2842fe89e86b4540807f9aa2e7ceb67, type: 2}
+    Item2AmountRequired: 1
+    itemResult: {fileID: 11400000, guid: f201036dc528a1243956a1a72cc81f2a, type: 2}
+    ItemResultAmount: 1

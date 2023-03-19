@@ -19,6 +19,11 @@ namespace Assets.Scripts.Inventory
             return false;
         }
 
+        public override string DescriptionItemCrafting()
+        {
+            return $"Restaura {HpRestauration} de salud";
+        }
+
 
     }
 }

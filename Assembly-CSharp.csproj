@@ -63,6 +63,7 @@
     <Compile Include="Assets\Scripts\Inventory\ItemPotionLife.cs" />
     <Compile Include="Assets\Scripts\Inventory\InventorySlot.cs" />
     <Compile Include="Assets\Scripts\IA\EnemyInteraction.cs" />
+    <Compile Include="Assets\Scripts\Store\ItemVenta.cs" />
     <Compile Include="Assets\Scripts\Characters\CharacterStats.cs" />
     <Compile Include="Assets\Scripts\Dialogs\NPCInteraction.cs" />
     <Compile Include="Assets\Scripts\Extras\ZonaConfiner.cs" />
@@ -87,6 +88,7 @@
     <Compile Include="Assets\Scripts\Characters\CharacterHealth.cs" />
     <Compile Include="Assets\Scripts\Loot\LootButton.cs" />
     <Compile Include="Assets\Scripts\Extras\ObjectPooler.cs" />
+    <Compile Include="Assets\Scripts\Managers\CraftingManager.cs" />
     <Compile Include="Assets\Scripts\Extras\Portal.cs" />
     <Compile Include="Assets\Scripts\IA\System IA\IAController.cs" />
     <Compile Include="Assets\Scripts\Quests\QuestDescription.cs" />
@@ -102,13 +104,17 @@
     <Compile Include="Assets\Scripts\Characters\CharacterFX.cs" />
     <Compile Include="Assets\Scripts\Quests\QuestRewardItem.cs" />
     <Compile Include="Assets\Scripts\Managers\UIManager.cs" />
+    <Compile Include="Assets\Scripts\Crafting\RepiceCard.cs" />
     <Compile Include="Assets\Scripts\IA\Actions\ActionInactivePathMovement.cs" />
     <Compile Include="Assets\Scripts\IA\Actions\ActionsFollowCharacter.cs" />
+    <Compile Include="Assets\Scripts\Crafting\RecipeList.cs" />
     <Compile Include="Assets\Scripts\IA\System IA\IAAction.cs" />
     <Compile Include="Assets\Scripts\Loot\LootManager.cs" />
     <Compile Include="Assets\Scripts\Weapons\ContainerWeapon.cs" />
     <Compile Include="Assets\Scripts\Managers\LevelManager.cs" />
+    <Compile Include="Assets\Scripts\Store\ItemTienda.cs" />
     <Compile Include="Assets\Scripts\IA\EnemyBarLife.cs" />
+    <Compile Include="Assets\Scripts\Store\StoreManager.cs" />
     <Compile Include="Assets\Scripts\Characters\MovementCharacter.cs" />
     <Compile Include="Assets\Scripts\Quests\QuestManager.cs" />
     <Compile Include="Assets\Scripts\IA\Actions\ActionActivatePathMovement.cs" />
@@ -116,11 +122,13 @@
     <Compile Include="Assets\Scripts\Weapons\Weapon.cs" />
     <Compile Include="Assets\Scripts\Characters\CharacterAttack.cs" />
     <Compile Include="Assets\Scripts\Weapons\Proyectil.cs" />
+    <Compile Include="Assets\Scripts\Store\Item.cs" />
     <Compile Include="Assets\Scripts\Quests\InspectorQuestDescription.cs" />
     <Compile Include="Assets\Scripts\Inventory\AddItems.cs" />
     <Compile Include="Assets\Scripts\Inventory\ItemPotionMana.cs" />
-    <Compile Include="Assets\Scripts\IA\EnemyMovement.cs" />
+    <Compile Include="Assets\Scripts\Crafting\recipe.cs" />
     <Compile Include="Assets\Scripts\IA\EnemyHealth.cs" />
+    <Compile Include="Assets\Scripts\IA\EnemyMovement.cs" />
     <Compile Include="Assets\Scripts\IA\System IA\IAEstado.cs" />
     <Compile Include="Assets\Scripts\Managers\CoinsManager.cs" />
   </ItemGroup>
